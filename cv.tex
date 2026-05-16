@@ -1,0 +1,349 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+%\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage[cm]{fullpage}
+
+\usepackage[inline]{enumitem}
+
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+\usepackage{multicol}
+\usepackage{tabularx} % For enhanced tabular environments
+\usepackage{booktabs}
+\usepackage{comment}
+\usepackage{enumitem}
+
+
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+
+
+
+%\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+
+\usepackage{titlesec}
+
+% Define a very light gray color
+\definecolor{LightGray}{RGB}{235, 235, 235}
+
+
+
+
+  
+% Modify section title format
+\titleformat{\section}
+  {\Large\scshape\raggedright} % Font style
+  {} % No numbering
+  {0em} % Spacing
+  {\rlap{\color{LightGray}\rule[-0.1cm]{\linewidth}{0.5cm}}\hspace{0em}} % Background bar and small padding
+  %[\titlerule] % Optional bottom rule
+
+\titlespacing{\section}{0pt}{2pt}{2pt}
+
+
+
+
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+
+%--------------------BIBLIOGRAPHY----------------------
+\usepackage[backend=biber,
+           bibstyle=numeric,
+           sorting=none,
+           sortcites=true,
+           natbib=true,
+           defernumbers=true,
+           maxbibnames=99,
+           giveninits=true,
+           uniquename=false]{biblatex}
+
+\defbibheading{bibintoc}{%
+  \noindent
+  {\rlap{\color{LightGray}\rule[-0.1cm]{\linewidth}{0.5cm}}\hspace{0em}} % Background bar and small padding
+  {\Large\scshape\raggedright Scientific Publications} % Title text
+  \par\vspace{0pt} % Space before rule
+  %\titlerule % Bottom rule
+  \par\medskip % Space below title
+  \addcontentsline{toc}{section}{Publications} % Add to TOC if needed
+}
+% \addbibresource{papers} 
+\addbibresource{papers.bib}
+
+
+
+
+% corresponding
+\renewcommand*{\mkbibnamegiven}[1]{%
+\ifitemannotation{highlight}%
+{\textbf{M.G Silva}}%
+{#1}%
+}
+\renewcommand*{\mkbibnamefamily}[1]{%
+\ifitemannotation{highlight}%
+  {\hspace{-3pt}}%  %%% <-- space between MM * or dagger (not very elegant...)
+  {#1}%
+\ifitemannotation{first}%
+  {\textsuperscript{*}}%
+  {}%
+\ifitemannotation{corresponding}%
+  {$^\dagger$}%
+  {}%
+}%%
+
+
+% Bold title of papers
+\DeclareFieldFormat[inproceedings]{title}{\mkbibbold{#1}}
+
+  % Adjust vertical space between bibliography items
+\setlength{\bibitemsep}{0.5\baselineskip} % Modify the length as needed
+
+
+\definecolor{StrongGray}{RGB}{20, 20, 20} 
+
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+\color{StrongGray}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Miguel \textsc{G. Silva}
+	}\medskip\par}
+
+%\smash{\includegraphics[width=3cm]{id.png}}
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+%\section{Personal Data}
+
+\begin{center}
+\textsc{Email:} \href{mailto:miguelgarcaosilva@gmail.com}{miguelgarcaosilva@gmail.com} \hspace{1cm}
+\textsc{LinkedIn:} \href{https://www.linkedin.com/in/miguelgarcaosilva/}{miguelgarcaosilva}  \hspace{1cm}
+\textsc{GitHub:}  \href{https://github.com/miguelgarcaosilva}{miguelgarcaosilva} 
+\end{center}
+\medskip
+
+% About me
+\section{Summary}
+
+My work centers on scalable and interpretable machine learning methods for time series modeling and pattern discovery, with applications in behavioral, mobility, and utility data. It aims to extract actionable insights from complex temporal patterns, emphasizing interpretability, scalability, and practical impact.
+
+
+%My work focuses on developing scalable machine learning solutions for behavioral, mobility, and utility data. I specialize in time series modeling, pattern discovery, and interpretable ML, with an emphasis on translating complex data into actionable insights. Driven by impact, technical rigor, and continuous learning.
+
+%Data scientist and PhD researcher with experience developing scalable machine learning solutions for behavioral, mobility, and utility data. Specialized in time series modeling, pattern discovery, and interpretable ML. Driven by impact, technical rigor, and continuous learning.
+
+%Data scientist and PhD researcher applying machine learning to real-world time series and behavioral data. Experienced in uncovering actionable insights from large, complex datasets and deploying interpretable models for forecasting, anomaly detection, and pattern mining. Passionate about translating data into impact at scale.
+
+
+%Data scientist and PhD researcher focused on pattern recognition and machine learning for time series analysis. My work combines technical expertise with a commitment to interpretability and real-world impact, translating complex data into solutions that are not just accurate, but actionable.
+
+
+\textbf{Areas of Focus:}  · Machine Learning · Deep Learning  · Pattern Mining · Time Series Analysis 
+
+
+
+%Section: Work Experience
+\section{Work Experience}
+\renewcommand{\arraystretch}{1.05}
+
+\begin{tabularx}{\linewidth}{r|X}
+
+\textsc{2021 --} & \textbf{Doctoral Researcher} at \textsc{LASIGE \& INESC-ID} \\ 
+\textsc{2025} & 
+\begin{itemize}[leftmargin=*, itemsep=1pt]
+  \item  Analyzed smart meter data from 2,170 households using biclustering, uncovering statistically significant and actionable local water consumption patterns inaccessible to traditional clustering methods.
+  \item Developed a scalable methodology to extract  population density patterns from mobile phone data (3,743 cells) across Lisbon, uncovering multi-level seasonality and emerging urban trends.% to support data-driven city planning.
+  \item Designed a methodology to extract recurring, non-trivial, and statistically significant patterns in multivariate time series data.
+  \item Published 3 first-author papers in top-quartile (Q1) scientific journals.
+\end{itemize} \\[-6pt]
+
+\textsc{2022 --} & \textbf{Teaching Assistant} at \textsc{IST, University of Lisbon} \\
+\textsc{2024} & 
+\begin{itemize}[leftmargin=*, itemsep=1pt]
+  \item Selected as invited TA to deliver 140+ hours of lectures and labs on Information Retrieval (Python) and Database Systems (SQL) to over 300 students.
+  \item Maintained an average student rating of 4.5/5 across three semesters.
+\end{itemize} \\[-6pt]
+
+\textsc{2021 --} & \textbf{Junior Researcher} at \textsc{LASIGE} \\
+\textsc{2022} & 
+\begin{itemize}[leftmargin=*,  itemsep=1pt]
+  \item Improved movie recommendation accuracy by 6.4\% using biclustering-enhanced collaborative filtering.
+  \item Authored a survey published in ACM Computing Surveys, a leading CS journal.
+\end{itemize} \\
+
+\end{tabularx}
+
+
+
+%Section: Education
+\vspace{-0.1cm}
+\section{Education}
+\begin{tabular}{rl}
+\textsc{2021 -} & \textbf{PhD in Computer Science} \\ 
+\textsc{Expected 2025} & \textit{Faculty of Sciences University of Lisbon}, Portugal \\[1ex]
+
+\textsc{2018 - 2020} & \textbf{MSc in Data Science} \\ 
+& \textit{Faculty of Sciences, University of Lisbon}, Portugal \\
+& \normalsize \textsc{GPA}: 18 / 20 , \textsc{Thesis}: 19/20\\[1ex]
+
+\textsc{2025} & \textbf{Deep Learning Specialization} \\
+& \textit{Coursera - DeepLearning.AI} \\ 
+
+
+%\textsc{2015 - 2018} & \textbf{BSc. in Informatics Engineering} \\
+%& \textit{Faculty of Sciences, University of Lisbon}, Portugal \\
+%& \normalsize \textsc{GPA}: 16 / 20  \\[1ex]
+
+
+\end{tabular}
+
+
+\section{Projects}
+
+\begin{tabularx}{\linewidth}{r|X}
+
+\textsc{2025} & \textbf{Motif Mining in Multivariate Time Series} \hfill \href{https://www.sciencedirect.com/science/article/pii/S0031320325005606#sec5}{\textit{Publication}} \enspace | \enspace \href{https://github.com/MiguelGarcaoSilva/motifsinresidual}{\texttt{GitHub}}\\ [0.25ex]
+& \quad  \hangindent=1em \hangafter=1  Built an unsupervised pipeline to mine recurring patterns in residual time series, revealing actionable behavioral insights in energy use, human mobility, and urban activity. \\ [3ex]
+
+
+\textsc{2025} & \textbf{Next-Motif: Predicting Irregular Pattern Recurrence in Time Series} \hfill \href{https://github.com/MiguelGarcaoSilva/motifpred}{\texttt{GitHub}} \\ [0.25ex]
+& \quad  \hangindent=1em \hangafter=1  Leveraged LSTM, TCN, and Transformer models to build a forecasting system for irregular event patterns in time series, reducing prediction error by 21–24\% on urban mobility and electricity consumption data.\\ [3ex]
+
+%\textsc{2025} & \textbf{Deep Learning From Scratch} \hfill \href{https://github.com/MiguelGarcaoSilva/FNN-Numpy}{\texttt{GitHub}} \\ [0.25ex]
+%& \quad \hangindent=1em \hangafter=1 Built vectorized NumPy implementations of FNNs, CNNs, and LSTMs to solidify understanding of neural network internals. \\[3ex]
+
+%\textsc{2025} & \textbf{LLM-Powered Fashion Assistant} \hfill \href{https://github.com/MiguelGarcaoSilva/WardrobeGPT}{\texttt{GitHub}} \\
+%& \quad \hangindent=1em \hangafter=1 Developed a web-based virtual stylist leveraging vision-language models (VLMs) to provide personalized outfit recommendations based on user-uploaded images. \\[3ex]
+
+\textsc{2024} & \textbf{UrbanFlow: Spatiotemporal Analysis of Population Density Data} \hfill
+\href{https://journals.sagepub.com/doi/full/10.1177/23998083231219048}{\textit{Publication}} \enspace | \enspace \href{https://github.com/MiguelGarcaoSilva/cml_synthetic_demo}{\texttt{GitHub}}\\ [0.25ex]
+& \quad \hangindent=1em \hangafter=1 Developed a Python-based, Docker-deployable tool to extract and visualize spatiotemporal population trends from mobile network data (3,743 cells), enabling actionable insights for data-driven urban planning. \\[3ex]
+
+\textsc{2023} & \textbf{Biclustering Water Consumption Patterns from Smart Meter Data} \hfill \href{https://www.mdpi.com/2073-4441/14/12/1954}{\texttt{Publication}} \\[0.25ex]
+& \quad \hangindent=1em \hangafter=1  Applied biclustering to household water data from a luxury resort (2,170 users), uncovering high-resolution seasonal consumption profiles to support anomaly detection and data-driven resource planning.
+
+\end{tabularx}
+
+\vspace{-0.2cm}
+\section{Technical Skills}
+
+\textbf{Python} · \textbf{SQL} · \textbf{Pandas} · \textbf{Scikit-learn} · \textbf{PyTorch} · \textbf{ETL Pipelines} · \textbf{NumPy} · \textbf{Matplotlib} · \textbf{Git}
+  
+
+
+
+
+% \end{tabularx} 
+
+
+
+
+%\begin{multicols}{1}
+
+%  \section{Teaching Experience}
+  % \begin{tabular}{lr}
+%    \begin{itemize}[noitemsep,topsep=0pt]
+%      \item Information Processing and Retrieval
+%      \item Databases
+%      \item Data and Information Systems Management
+%      \item OutSystems Development
+%    \end{itemize}
+
+  %  \end{tabular}
+    % TODO: add when appropriate
+    % supervised 13 students, including 2 junior PhD students and 4 master theses.     
+  
+ % \columnbreak
+  
+  %Section: Technical Skills
+  % \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+  %\section{Software Skills}
+  %\begin{tabularx}{\linewidth}{@{}rX@{}}
+  %\textsc{Languages:}  & Python,, Java, Mathematica, R  \\
+  %\textsc{Frameworks:} & PyTorch, Keras, Tensorflow, Pandas, Scikit-learn, %NumPy, CVX, CVXPY/CVXOPT, Abaqus \\
+  %\textsc{Misc:} & Unix, Git, Conda, Colab, Tmux, Pueue 
+  %\end{tabularx}
+%\end{multicols}
+
+
+%Section: Publications
+%\nocite{*}
+% \defbibnote{mynote}{$^*$ indicates equal contributions}
+%\printbibliography[heading=bibintoc]
+
+
+%Section: Extracurricular Activities
+%\section{Research Projects}
+%\bgroup
+%\def\arraystretch{1.25}
+%\begin{tabular}{rl}
+
+%\textsc{2023} & Attended Cambridge Ellis Unit Summer School on Probabilistic Machine Learning \\
+%\textsc{2022-} & Co-organizer of \href{https://deeplearningpt.github.io/}{Deep Learning Sessiong Portugal} \\
+%\textsc{2021} & Attended Lisbon Machine Learning Summer School \\
+%\textsc{2009-21} & Competitive football player (national level) \\
+%\textsc{2015} & National finalist in Biology Olympiad 
+% \textsc{2019-20} & Football Team Representative in IST Students Association \\
+% \textsc{2016-18} & Collaborator and Head of Academic and Cultural Section in IST Biomedical Students Association \\
+% \textsc{2015} & European Youth Parliament Portugal - National Finalist \\
+% \textsc{2009-16} & Playing in the National Football Division \\
+% \textsc{2012-17} & Voluntering in the Food Bank
+%\end{tabular}
+%\egroup
+
+
+
+\begin{comment}
+    
+\begin{multicols}{2}
+% Section: Languages
+\section{Languages}
+\begin{tabular}{lll}
+ Portuguese & English & Spanish 
+\end{tabular}
+
+\columnbreak
+
+\section{Personal Interests}
+\begin{tabular}{llll}
+ Athletics & Football & Financial literacy & Chess
+\end{tabular}
+
+\end{multicols}
+\end{comment}
+
+
+\end{document}
